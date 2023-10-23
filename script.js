@@ -61,3 +61,32 @@ leftBtn.addEventListener('click', stepLeft);
 homeBtn.addEventListener('click', home);
 turnClockWiseBtn.addEventListener('click', turnClockWise);
 turnAntiClockWiseBtn.addEventListener('click', turnAntiClockWise);
+
+// Keyboard events
+document.addEventListener('keydown', function (event) {
+  const { key, keyCode } = event;
+  console.log(`${key} (${keyCode})`);
+  switch (key) {
+    case 'ArrowUp':
+      stepUp();
+      break;
+    case 'ArrowDown':
+      stepDown();
+      break;
+    case 'ArrowLeft':
+      stepLeft();
+      break;
+    case 'ArrowRight':
+      stepRight();
+      break;
+    case 'End':
+      turnClockWise();
+      break;
+    case 'Shift':
+      turnAntiClockWise();
+      break;
+    case 'Control':
+      home();
+      break;
+  }
+});
